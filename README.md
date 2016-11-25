@@ -1,14 +1,13 @@
-# [DEPRECATED] Express-4x-Typescript-Sample
+# Express-4x-Typescript-Sample
 Sample Node.js Express 4.x app with [TypeScript](http://www.typescriptlang.org). Useful for anyone starting to write an Express app with TypeScript.
 
-:warning: This project is deprecated and will receive no further maintenance.
 
 Generated with
 --------------
-- [Node.js](https://nodejs.org) 0.12.0
-- [npm](https://www.npmjs.com) 2.5.1
-- [Express](http://expressjs.com) 4.11.2
-- [tsd](http://definitelytyped.org/tsd/) 0.6.0-beta.5
+- [Node.js](https://nodejs.org) 6.6.0
+- [npm](https://www.npmjs.com) 3.10.3
+- [Express](http://expressjs.com) 4.14.0
+- [tsd](http://definitelytyped.org/tsd/) 0.6.5
 
 Requirements
 ------------
@@ -26,6 +25,7 @@ This will
 Contributions
 -------------
 Feel free to send a PR or create an Issue.
+
 
 Author
 ------

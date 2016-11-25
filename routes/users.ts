@@ -1,11 +1,13 @@
-/// <reference path='../typings/tsd.d.ts' />
+///<reference path="../typings/express/express.d.ts"/>
+import * as express from "express";
 
-import express = require('express');
-var router = express.Router();
+
+let router = express.Router();
+
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+	res.send('respond with a resource');
 });
 
 export = router;
