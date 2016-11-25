@@ -1,16 +1,20 @@
 /// <reference path='./typings/tsd.d.ts' />
-
-import * as express from "express";
 import * as path from "path";
 import * as logger from "morgan";
 
-
+import * as express from "express";
 import favicon = require('serve-favicon');
 import cookieParser = require('cookie-parser');
 import bodyParser = require('body-parser');
 
+import Request = express.Request;
+import Response = express.Response;
+import NextFunction = express.NextFunction;
+
+
 import index = require('./routes/index');
 import users = require('./routes/users');
+
 
 
 let app = express();
@@ -39,8 +43,8 @@ app.use('/', index);
 app.use('/users', users);
 
 //catch 404 and forward to error handler
-app.use((req, res, next) => {
-	let err = new Error('Not Found');
+app.use((req: Request, res: Response, next: NextFunction) => {
+	let err: Error = new Error('Not Found');
 	err['status'] = 404;
 	next(err);
 });
@@ -51,7 +55,7 @@ app.use((req, res, next) => {
 // will print stacktrace
 if (app.get('env') === 'development') {
 
-	app.use((err: any, req, res, next) => {
+	app.use((err: any, req: Request, res: Response, next: NextFunction) => {
 		res.status(err['status'] || 500);
 		res.render('error', {
 			message: err.message,
@@ -62,7 +66,7 @@ if (app.get('env') === 'development') {
 
 // production error handler
 // no stacktraces leaked to user
-app.use((err: any, req, res, next) => {
+app.use((err: any, req: Request, res: Response, next: NextFunction) => {
 	res.status(err.status || 500);
 	res.render('error', {
 		message: err.message,
